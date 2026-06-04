@@ -48,6 +48,8 @@ const getDynamicChingooCommentary = (outcome, chingooPlayers) => {
   const luckyPlayer = chingooPlayers[Math.floor(Math.random() * chingooPlayers.length)].name;
 
   switch (outcome) {
+     case "Cinderella 🏆":
+      return `CINDERELLA STORY! Against all odds, against all logic, against a 65-rated keeper who had no business being anywhere near this tournament — the boys pulled off the greatest upset in World Cup history. Gringonator made exactly one save the entire tournament. It happened to be a point-blank header in the 94th minute of the final. ${luckyPlayer} is somehow claiming the assist.`;
     case "Champion 🏆":
       return `WE WON THE WORLD CUP! But let's be real—we won entirely IN SPITE of ${luckyPlayer}, who spent the final jogging around the center circle waving for the ball while the rest of the squad did all the dirty work.`;
     case "2nd Place 🥈":
