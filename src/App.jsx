@@ -21,16 +21,16 @@ const generateHiddenTrait = (player) => {
 
 const getChingooDraftCommentary = (name) => {
   const customLines = {
-    "Gringonator": "🧤 Gringonator (65 OVR): Showed up with no mic, lagging, and actively trying to dribble out of his own box. Miraculously got a clean sheet or let in a 40-yard roller.",
+    "Gringonator": "🧤 Gringonator (65 OVR): showed up to camp unfit, visibly hungover, and actively trying to dribble out of his own box",
     "OllieTheDoodle": "🐕 OllieTheDoodle (85 OVR): Spent more time chasing his own tail in the defensive third than tracking runners. Traded defensive shape for absolute chaotic energy.",
-    "DougDimadome322": "🎩 DougDimadome322 (80 OVR): Fullback who thinks he is an elite playmaker. Kept spamming cross-field lobs directly into the stands to nobody.",
-    "Boston_Ramos26": "🛡️ Boston_Ramos26 (80 OVR): Supposedly the 'Veteran baseline anchor' but spent the match screaming on Discord while tracking the wrong striker.",
-    "lilYoun9": "⚡ lilYoun9 (80 OVR): Pure CDM chaos. Left a massive hole in midfield because he was sprinting full speed upfront trying to inflate his match rating.",
-    "joezhai12": "🧠 joezhai12 (85 OVR): The 'maestro' who completely ghosted under a light press and blamed the formation slider for his heavy touches.",
+    "DougDimadome322": "🎩 DougDimadome322 (80 OVR): Fullback who thinks he is an elite playmaker. Kept launching cross-field lobs directly into the stands to nobody.",
+    "Boston_Ramos26": "🛡️ Boston_Ramos26 (80 OVR): Supposedly the 'Veteran baseline anchor' but spent the match screaming at the backline while tracking the wrong striker.",
+    "lilYoun9": "⚡ lilYoun9 (80 OVR): Pure CDM chaos. Left a massive hole in midfield and tripped on his own feet while sprinting full speed upfront trying to pad his highlight reel.",
+    "joezhai12": "🧠 joezhai12 (85 OVR): The 'maestro' who completely ghosted under a light press and blamed the wet pitch for his heavy touches.",
     "gengho": "🌱 gengho (80 OVR): High energy, zero direction. Ran 14 kilometers entirely in the wrong areas of the pitch, effectively doing cardio.",
     "sailordooooom": "⚓ sailordooooom (80 OVR): Caught offside a record-breaking 11 times in a single tournament run. Completely blind to the backline.",
     "SongEC": "🃏 SongEC (80 OVR): Unpredictable maverick who refused to pass the ball once in the final third. Kept trying flair trick maneuvers and losing possession.",
-    "calamari1": "🐙 calamari1 (90 OVR): High-rated superstar stat-padder. Scored a goal but continuously hit the call-for-pass button every single second he didn't have it."
+    "calamari1": "🐙 calamari1 (90 OVR): High-rated superstar stat-padder. Demanded every through ball, every set piece, and every goal kick be played directly to his feet. Giving peak CR7 energy."
   };
   return customLines[name] || "🔥 A Chingoo legend somehow made the tournament sheet and disrupted the whole system.";
 };
@@ -38,9 +38,9 @@ const getChingooDraftCommentary = (name) => {
 const getDynamicChingooCommentary = (outcome, chingooPlayers) => {
   if (chingooPlayers.length === 0) {
     switch (outcome) {
-      case "Champion 🏆": return "ABSOLUTE CINEMA! You decoded the global matrix and conquered the World Cup!";
-      case "2nd Place 🥈": return "Losing on penalties in the final. Brilliant systemic build, but falling just short.";
-      default: return "Group stage exit. Roster split completely apart on global system requirements.";
+      case "Champion 🏆": return "ABSOLUTE CINEMA! You dominated every match from whistle to whistle and conquered the World Cup!";
+      case "2nd Place 🥈": return "Losing on penalties in the final. Brilliant tactical setup, but falling just short.";
+      default: return "Group stage exit. Squad chemistry fell apart before the third group match.";
     }
   }
 
@@ -48,19 +48,19 @@ const getDynamicChingooCommentary = (outcome, chingooPlayers) => {
 
   switch (outcome) {
     case "Champion 🏆":
-      return `WE WON THE WORLD CUP! But let's be real—we won entirely IN SPITE of ${luckyPlayer}, who spent the final running in circles shouting into his muted mic while the rest of the team carried the math loop.`;
+      return `WE WON THE WORLD CUP! But let's be real—we won entirely IN SPITE of ${luckyPlayer}, who spent the final jogging around the center circle waving for the ball while the rest of the squad did all the dirty work.`;
     case "2nd Place 🥈":
       return `Losing on penalties in the final! An incredible run completely thrown in the trash because ${luckyPlayer} decided to go for a rainbow flick inside our own box instead of just clearing the ball.`;
     case "3rd Place 🥉":
       return `Third place podium finish! A decent run, but we missed out on gold because ${luckyPlayer} ghosted completely the absolute split-second a press stepped to them.`;
     case "4th Place":
-      return `4th place finish. No medals, just terrible positioning. ${luckyPlayer} single-handedly destroyed our tactical lines trying to inflate their individual performance rating.`;
+      return `4th place finish. No medals, just terrible positioning. ${luckyPlayer} single-handedly destroyed our tactical lines trying to chase personal glory instead of playing for the team.`;
     case "Quarter-Finals":
       return `Knockout exit in the Quarters! The tournament campaign dissolved because ${luckyPlayer} spent the entire knockout game calling for the pass while dead out of stamina.`;
     case "Round of 16":
       return `Absolute reality check in the Round of 16. The exact moment our tactics collapsed can be traced back to ${luckyPlayer} completely misplacing a 5-yard pass straight to their striker.`;
     case "Round of 32":
-      return `Booted out in the Round of 32. Total structural gridlock. The locker room chemistry turned toxic because ${luckyPlayer} refused to track back and blamed 'button delay'.`;
+      return `Booted out in the Round of 32. Total structural gridlock. The locker room chemistry turned toxic because ${luckyPlayer} refused to track back and blamed 'heavy legs from the travel schedule'.`;
     default:
       return `GROUP STAGE FLIGHT HOME! Complete and utter disaster. ${luckyPlayer} showed up with massive lag, dropped a 4.1 match rating, and dragged our entire active team rating directly into the garbage. 💩`;
   }
