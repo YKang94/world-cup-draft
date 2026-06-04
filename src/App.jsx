@@ -307,13 +307,13 @@ export default function WorldCupTacticalDraft() {
     const players = Object.values(activeSquad);
     const avgOvr = players.reduce((sum, p) => sum + p.displayOvr, 0) / 7;
     
-    if (avgOvr >= 87) setResult("Champion 🏆");
-    else if (avgOvr >= 85) setResult("2nd Place 🥈");
-    else if (avgOvr >= 83) setResult("3rd Place 🥉");
-    else if (avgOvr >= 82) setResult("4th Place");
-    else if (avgOvr >= 70) setResult("Quarter-Finals");
-    else if (avgOvr >= 79) setResult("Round of 16");
-    else if (avgOvr >= 75) setResult("Round of 32");
+    if (avgOvr >= 90) setResult("Champion 🏆");
+    else if (avgOvr >= 88) setResult("2nd Place 🥈");
+    else if (avgOvr >= 86) setResult("3rd Place 🥉");
+    else if (avgOvr >= 85) setResult("4th Place");
+    else if (avgOvr >= 83) setResult("Quarter-Finals");
+    else if (avgOvr >= 82) setResult("Round of 16");
+    else if (avgOvr >= 80) setResult("Round of 32");
     else setResult("Group Stage Flight Home 💩");
   };
 
