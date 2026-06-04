@@ -182,7 +182,7 @@ export default function WorldCupTacticalDraft() {
     const isChingooClubsNightActive = totalChingooUnited >= 2;
 
     const isEgoWarActive = totalPrimaDonnas >= 3 && !isChingooClubsNightActive;
-    const isInexperiencePanicActive = totalWonderkids >= 3 && totalVeterans === 0 && !isChingooClubsNightActive;
+    const isInexperiencePanicActive = totalWonderkids >= 2 && totalVeterans === 0 && !isChingooClubsNightActive;
     const isWildcardChaosActive = (totalWildcards >= 2 || (totalWildcards >= 1 && totalPrimaDonnas >= 1)) && !isChingooClubsNightActive;
 
     const countryCounts = {};
@@ -228,10 +228,7 @@ export default function WorldCupTacticalDraft() {
       
       // Prima Donnas are completely locked from receiving standard country bonuses
       if (player.trait.type !== 'PRIMA_DONNA') {
-        if (player.trait.type === 'WONDERKID' && player.ovr <= 82 && nativeCount >= 3) {
-          player.displayOvr += 8; // Explosive low-tier Wonderkid multiplier payout
-          if (!penaltyApplied) player.linkStatus = 'buff';
-        } else if (nativeCount === 2) {
+      if (nativeCount === 2) {
           player.displayOvr += 3;
           if (!penaltyApplied) player.linkStatus = 'buff';
         } else if (nativeCount >= 3) {
@@ -243,6 +240,11 @@ export default function WorldCupTacticalDraft() {
       if (player.trait.type === 'VETERAN' && totalWonderkids >= 1) {
         player.displayOvr += 3;
         if (!penaltyApplied) player.linkStatus = 'buff';
+      }
+
+     if (player.trait.type === 'WONDERKID' && totalVeterans >= 1) {
+       player.displayOvr += 3;
+       if (!penaltyApplied) player.linkStatus = 'buff';
       }
 
       if (player.trait.type === 'WILDCARD' && !isWildcardChaosActive && totalWildcards === 1) {
