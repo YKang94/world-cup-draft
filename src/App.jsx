@@ -72,7 +72,7 @@ export default function WorldCupTacticalDraft() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [slotMachineDisplay, setSlotMachineDisplay] = useState({ flag: '🎰', name: 'SPIN FOR SELECTION' });
   const [result, setResult] = useState(null);
-  const [reRollsLeft, setReRollsLeft] = useState(2);
+  const [reRollsLeft, setReRollsLeft] = useState(1);
   const [liveLog, setLiveLog] = useState("Pull the lever to generate your first tactical choice...");
 
   const startSlotMachine = () => {
@@ -307,12 +307,12 @@ export default function WorldCupTacticalDraft() {
     const players = Object.values(activeSquad);
     const avgOvr = players.reduce((sum, p) => sum + p.displayOvr, 0) / 7;
     
-    if (avgOvr >= 85) setResult("Champion 🏆");
-    else if (avgOvr >= 83) setResult("2nd Place 🥈");
-    else if (avgOvr >= 81) setResult("3rd Place 🥉");
-    else if (avgOvr >= 80) setResult("4th Place");
-    else if (avgOvr >= 79) setResult("Quarter-Finals");
-    else if (avgOvr >= 77) setResult("Round of 16");
+    if (avgOvr >= 87) setResult("Champion 🏆");
+    else if (avgOvr >= 85) setResult("2nd Place 🥈");
+    else if (avgOvr >= 83) setResult("3rd Place 🥉");
+    else if (avgOvr >= 82) setResult("4th Place");
+    else if (avgOvr >= 70) setResult("Quarter-Finals");
+    else if (avgOvr >= 79) setResult("Round of 16");
     else if (avgOvr >= 75) setResult("Round of 32");
     else setResult("Group Stage Flight Home 💩");
   };
@@ -321,7 +321,7 @@ export default function WorldCupTacticalDraft() {
     setSquad({});
     setCurrentRoll(null);
     setResult(null);
-    setReRollsLeft(2);
+    setReRollsLeft(1);
     setLiveLog("Lineup cleared. Pull the lever to start a new campaign.");
     setSlotMachineDisplay({ flag: '🎰', name: 'START THE DRAFT' });
   };
@@ -341,7 +341,7 @@ export default function WorldCupTacticalDraft() {
           <div className="flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1 rounded-xl">
             <span className="text-xs uppercase font-bold tracking-wider text-slate-400">Re-rolls:</span>
             <span className={`text-xs font-black px-2 py-0.5 rounded ${reRollsLeft > 0 ? 'bg-indigo-900 text-indigo-300' : 'bg-rose-950 text-rose-400'}`}>
-              {reRollsLeft} / 2
+              {reRollsLeft} / 1
             </span>
           </div>
 
