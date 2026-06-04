@@ -310,7 +310,7 @@ export default function WorldCupTacticalDraft() {
     const avgOvr = players.reduce((sum, p) => sum + p.displayOvr, 0) / 7;
 
     const hasGringonator = players.some(p => p.name === "Gringonator");
-    if (hasGringonator && Math.random() < 0.10) {
+    if (hasGringonator && Math.random() < 0.50) {
       setResult("Cinderella 🏆");
       return;
     }
