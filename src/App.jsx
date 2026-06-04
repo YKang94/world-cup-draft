@@ -38,6 +38,7 @@ const getChingooDraftCommentary = (name) => {
 const getDynamicChingooCommentary = (outcome, chingooPlayers) => {
   if (chingooPlayers.length === 0) {
     switch (outcome) {
+      case "Cinderella 🏆": return "CINDERELLA STORY! Against all odds, against all logic, with a 65-rated keeper who had no business being anywhere near this tournament — the boys pulled off the greatest upset in World Cup history. Gringonator made exactly one save the entire tournament.";
       case "Champion 🏆": return "ABSOLUTE CINEMA! You dominated every match from whistle to whistle and conquered the World Cup!";
       case "2nd Place 🥈": return "Losing on penalties in the final. Brilliant tactical setup, but falling just short.";
       default: return "Group stage exit. Squad chemistry fell apart before the third group match.";
@@ -304,10 +305,16 @@ export default function WorldCupTacticalDraft() {
 
   const chemDelta = (parseFloat(activeAvgOvr) - parseFloat(rawAvgOvr)).toFixed(1);
 
-  const calculateOutcome = () => {
+ const calculateOutcome = () => {
     const players = Object.values(activeSquad);
     const avgOvr = players.reduce((sum, p) => sum + p.displayOvr, 0) / 7;
-    
+
+    const hasGringonator = players.some(p => p.name === "Gringonator");
+    if (hasGringonator && Math.random() < 0.10) {
+      setResult("Cinderella 🏆");
+      return;
+    }
+        
     if (avgOvr >= 88) setResult("Champion 🏆");
     else if (avgOvr >= 87) setResult("2nd Place 🥈");
     else if (avgOvr >= 86) setResult("3rd Place 🥉");
@@ -455,7 +462,7 @@ export default function WorldCupTacticalDraft() {
 
         {result && (
           <div className={`rounded-2xl p-4 text-center shadow-xl relative overflow-hidden border transition-all ${
-            result.includes("Champion") ? 'bg-gradient-to-b from-amber-500 to-yellow-600 text-slate-950 border-yellow-400' : 
+          (result.includes("Champion") || result.includes("Cinderella")) ? 'bg-gradient-to-b from-amber-500 to-yellow-600 text-slate-950 border-yellow-400' :
             result.includes("Flight") ? 'bg-gradient-to-b from-stone-900 to-orange-950 text-orange-200 border-orange-900' : 'bg-slate-900 text-white border-slate-700'
           }`}>
             <h3 className="text-[10px] font-bold uppercase tracking-widest opacity-70 mb-0.5">Campaign Ending</h3>
