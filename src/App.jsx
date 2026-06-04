@@ -266,30 +266,18 @@ export default function WorldCupTacticalDraft() {
         if (!penaltyApplied) player.linkStatus = 'buff';
       }
 
-      let chainConnected = false;
-      if (hasConsecutiveChain) {
-        const leftNeighbor = draftedIndices.includes(dbIndex - 1);
-        const rightNeighbor = draftedIndices.includes(dbIndex + 1);
-        const farLeftNeighbor = draftedIndices.includes(dbIndex - 2);
-        const farRightNeighbor = draftedIndices.includes(dbIndex + 2);
-
-        if ((leftNeighbor && rightNeighbor) || (leftNeighbor && farLeftNeighbor) || (rightNeighbor && farRightNeighbor)) {
-          chainConnected = true;
-          if (player.trait.type === 'CATALYST') {
-            player.displayOvr += 6; 
-            if (!penaltyApplied) player.linkStatus = 'buff';
-          }
-        }
-      }
-
-      // Frustration Isolation Penalty for lower OVR gamble cards
-      if (player.trait.type === 'CATALYST' && !chainConnected) {
-        player.displayOvr -= 4;
-        player.linkStatus = 'clash';
-      }
-    });
-
-    return updatedSquad;
+        if (player.trait.type === 'CATALYST') {
+              if (nativeCount >= 2) {
+                player.displayOvr += 4;
+                if (!penaltyApplied) player.linkStatus = 'buff';
+              } else {
+                player.displayOvr -= 4;
+                player.linkStatus = 'clash';
+              }
+            }
+          });
+      
+          return updatedSquad;
   };
 
   const activeSquad = processSquadChemistry();
