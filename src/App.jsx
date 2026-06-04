@@ -248,10 +248,10 @@ export default function WorldCupTacticalDraft() {
           player.displayOvr += 8; // Explosive low-tier Wonderkid multiplier payout
           if (!penaltyApplied) player.linkStatus = 'buff';
         } else if (nativeCount === 2) {
-          player.displayOvr += 2;
+          player.displayOvr += 3;
           if (!penaltyApplied) player.linkStatus = 'buff';
         } else if (nativeCount >= 3) {
-          player.displayOvr += 4;
+          player.displayOvr += 5;
           if (!penaltyApplied) player.linkStatus = 'buff';
         }
       }
