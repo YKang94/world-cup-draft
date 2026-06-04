@@ -86,8 +86,9 @@ export default function WorldCupTacticalDraft() {
     const finalCountry = COUNTRIES[Math.floor(Math.random() * COUNTRIES.length)];
     const basePos = getBasePosition(finalSlot);
 
+    const draftedNames = Object.values(squad).map(p => p.name);
     const relevantPlayers = PLAYERS.filter(
-      p => p.country === finalCountry.name && p.pos === basePos
+      p => p.country === finalCountry.name && p.pos === basePos && !draftedNames.includes(p.name)
     );
 
     const shuffled = relevantPlayers.sort(() => 0.5 - Math.random());
