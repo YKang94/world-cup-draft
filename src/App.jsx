@@ -190,24 +190,8 @@ export default function WorldCupTacticalDraft() {
       countryCounts[p.country] = (countryCounts[p.country] || 0) + 1;
     });
 
-    const draftedIndices = playersArray.map(p => 
-      PLAYERS.findIndex(dp => dp.name === p.name)
-    ).sort((a, b) => a - b);
-
-    let hasConsecutiveChain = false;
-    for (let i = 0; i < draftedIndices.length - 2; i++) {
-      if (
-        draftedIndices[i+1] === draftedIndices[i] + 1 && 
-        draftedIndices[i+2] === draftedIndices[i] + 2
-      ) {
-        hasConsecutiveChain = true;
-        break;
-      }
-    }
-
     Object.keys(updatedSquad).forEach(slot => {
       const player = updatedSquad[slot];
-      const dbIndex = PLAYERS.findIndex(dp => dp.name === player.name);
       let penaltyApplied = false;
 
       // 1. CHINGOO UNITED IMMUNITY OVERRIDES
@@ -266,16 +250,11 @@ export default function WorldCupTacticalDraft() {
         if (!penaltyApplied) player.linkStatus = 'buff';
       }
 
-        if (player.trait.type === 'CATALYST') {
-              if (nativeCount >= 2) {
-                player.displayOvr += 4;
-                if (!penaltyApplied) player.linkStatus = 'buff';
-              } else {
-                player.displayOvr -= 4;
-                player.linkStatus = 'clash';
-              }
-            }
-          });
+       if (player.trait.type === 'CATALYST' && nativeCount >= 2) {
+        player.displayOvr += 3;
+        if (!penaltyApplied) player.linkStatus = 'buff';
+      }
+    });
       
           return updatedSquad;
   };
