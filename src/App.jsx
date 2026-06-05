@@ -21,7 +21,7 @@ const generateHiddenTrait = (player) => {
 
 const getChingooDraftCommentary = (name) => {
   const customLines = {
-    "Gringonator": "🧤 Gringonator (65 OVR): showed up to camp unfit, visibly hungover, and actively trying to dribble out of his own box",
+    "Gringonator": "🧤 Gringonator (10 OVR): showed up to camp unfit, visibly hungover, and actively trying to dribble out of his own box",
     "OllieTheDoodle": "🐕 OllieTheDoodle (85 OVR): Spent more time chasing his own tail in the defensive third than tracking runners. Traded defensive shape for absolute chaotic energy.",
     "DougDimadome322": "🎩 DougDimadome322 (80 OVR): Fullback who thinks he is an elite playmaker. Kept launching cross-field lobs directly into the stands to nobody.",
     "Boston_Ramos26": "🛡️ Boston_Ramos26 (80 OVR): Supposedly the 'Veteran baseline anchor' but spent the match screaming at the backline while tracking the wrong striker.",
