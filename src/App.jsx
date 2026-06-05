@@ -23,13 +23,13 @@ const getChingooDraftCommentary = (name) => {
   const customLines = {
     "Gringonator": "🧤 Gringonator (10 OVR): showed up to camp unfit, visibly hungover, and actively trying to dribble out of his own box",
     "OllieTheDoodle": "🐕 OllieTheDoodle (85 OVR): Spent more time chasing his own tail in the defensive third than tracking runners. Traded defensive shape for absolute chaotic energy.",
-    "DougDimadome322": "🎩 DougDimadome322 (80 OVR): Fullback who thinks he is an elite playmaker. Kept launching cross-field lobs directly into the stands to nobody.",
-    "Boston_Ramos26": "🛡️ Boston_Ramos26 (80 OVR): Supposedly the 'Veteran baseline anchor' but spent the match screaming at the backline while tracking the wrong striker.",
-    "lilYoun9": "⚡ lilYoun9 (80 OVR): Pure CDM chaos. Left a massive hole in midfield and tripped on his own feet while sprinting full speed upfront trying to pad his highlight reel.",
+    "DougDimadome322": "🎩 DougDimadome322 (85 OVR): Fullback who thinks he is an elite playmaker. Kept launching cross-field lobs directly into the stands to nobody.",
+    "Boston_Ramos26": "🛡️ Boston_Ramos26 (85 OVR): Supposedly the 'Veteran baseline anchor' but spent the match screaming at the backline while tracking the wrong striker.",
+    "lilYoun9": "⚡ lilYoun9 (85 OVR): Pure CDM chaos. Left a massive hole in midfield and tripped on his own feet while sprinting full speed upfront trying to pad his highlight reel.",
     "joezhai12": "🧠 joezhai12 (85 OVR): The 'maestro' who completely ghosted under a light press and blamed the wet pitch for his heavy touches.",
-    "gengho": "🌱 gengho (80 OVR): High energy, zero direction. Ran 14 kilometers entirely in the wrong areas of the pitch, effectively doing cardio.",
-    "sailordooooom": "⚓ sailordooooom (80 OVR): Caught offside a record-breaking 11 times in a single tournament run. Completely blind to the backline.",
-    "SongEC": "🃏 SongEC (80 OVR): Unpredictable maverick who refused to pass the ball once in the final third. Kept trying flair trick maneuvers and losing possession.",
+    "gengho": "🌱 gengho (85 OVR): High energy, zero direction. Ran 14 kilometers entirely in the wrong areas of the pitch, effectively doing cardio.",
+    "sailordooooom": "⚓ sailordooooom (85 OVR): Caught offside a record-breaking 11 times in a single tournament run. Completely blind to the backline.",
+    "SongEC": "🃏 SongEC (85 OVR): Unpredictable maverick who refused to pass the ball once in the final third. Kept trying flair trick maneuvers and losing possession.",
     "calamari1": "🐙 calamari1 (90 OVR): High-rated superstar stat-padder. Demanded every through ball, every set piece, and every goal kick be played directly to his feet. Giving peak CR7 energy."
   };
   return customLines[name] || "🔥 A Chingoo legend somehow made the tournament sheet and disrupted the whole system.";
