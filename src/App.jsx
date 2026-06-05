@@ -437,7 +437,7 @@ export default function WorldCupTacticalDraft() {
             result.includes("Flight") ? 'bg-gradient-to-b from-stone-900 to-orange-950 text-orange-200 border-orange-900' : 'bg-slate-900 text-white border-slate-700'
           }`}>
             <h3 className="text-[10px] font-bold uppercase tracking-widest opacity-70 mb-0.5">Campaign Ending</h3>
-            <p className="text-2xl font-black tracking-tight uppercase">{result}</p>
+            <p className="text-2xl font-black tracking-tight uppercase">{result === "Cinderella 🏆" ? "Champion 🏆" : result}</p>
             
             <div className="p-2.5 rounded-lg mt-1.5 text-xs font-semibold leading-relaxed bg-black/30">
               "{getDynamicChingooCommentary(result, draftedChingooPlayers)}"
