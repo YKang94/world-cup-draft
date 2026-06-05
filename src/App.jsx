@@ -286,13 +286,13 @@ export default function WorldCupTacticalDraft() {
       return;
     }
         
-    if (avgOvr >= 88) setResult("Champion 🏆");
-    else if (avgOvr >= 87) setResult("2nd Place 🥈");
-    else if (avgOvr >= 86) setResult("3rd Place 🥉");
-    else if (avgOvr >= 85) setResult("4th Place");
-    else if (avgOvr >= 83) setResult("Quarter-Finals");
-    else if (avgOvr >= 82) setResult("Round of 16");
-    else if (avgOvr >= 80) setResult("Round of 32");
+    if (avgOvr >= 88.8) setResult("Champion 🏆");
+    else if (avgOvr >= 87.8) setResult("2nd Place 🥈");
+    else if (avgOvr >= 86.8) setResult("3rd Place 🥉");
+    else if (avgOvr >= 85.8) setResult("4th Place");
+    else if (avgOvr >= 84.5) setResult("Quarter-Finals");
+    else if (avgOvr >= 83) setResult("Round of 16");
+    else if (avgOvr >= 82) setResult("Round of 32");
     else setResult("Group Stage Flight Home 💩");
   };
 
