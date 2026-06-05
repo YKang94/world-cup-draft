@@ -76,6 +76,7 @@ export default function WorldCupTacticalDraft() {
   const [slotMachineDisplay, setSlotMachineDisplay] = useState({ flag: '🎰', name: 'SPIN FOR SELECTION' });
   const [result, setResult] = useState(null);
   const [reRollsLeft, setReRollsLeft] = useState(1);
+  const [showPopup, setShowPopup] = useState(false);
   const [liveLog, setLiveLog] = useState("Pull the lever to generate your first tactical choice...");
 
   const startSlotMachine = () => {
@@ -281,19 +282,20 @@ export default function WorldCupTacticalDraft() {
     const avgOvr = players.reduce((sum, p) => sum + p.displayOvr, 0) / 7;
 
     const hasGringonator = players.some(p => p.name === "Gringonator");
-    if (hasGringonator && Math.random() < 0.50) {
+    if (hasGringonator && Math.random() < 0.25) {
       setResult("Cinderella 🏆");
+      setShowPopup(true);
       return;
     }
         
-    if (avgOvr >= 88.8) setResult("Champion 🏆");
-    else if (avgOvr >= 87.8) setResult("2nd Place 🥈");
-    else if (avgOvr >= 86.8) setResult("3rd Place 🥉");
-    else if (avgOvr >= 85.8) setResult("4th Place");
-    else if (avgOvr >= 84.5) setResult("Quarter-Finals");
-    else if (avgOvr >= 83) setResult("Round of 16");
-    else if (avgOvr >= 82) setResult("Round of 32");
-    else setResult("Group Stage Flight Home 💩");
+    if (avgOvr >= 88.8) { setResult('Champion 🏆'); setShowPopup(true); }
+    else if (avgOvr >= 87.8) { setResult('2nd Place 🥈'); setShowPopup(true); }
+    else if (avgOvr >= 86.8) { setResult('3rd Place 🥉'); setShowPopup(true); }
+    else if (avgOvr >= 85.8) { setResult('4th Place'); setShowPopup(true); }
+    else if (avgOvr >= 84.5) { setResult('Quarter-Finals'); setShowPopup(true); }
+    else if (avgOvr >= 83) { setResult('Round of 16'); setShowPopup(true); }
+    else if (avgOvr >= 82) { setResult('Round of 32'); setShowPopup(true); }
+    else { setResult('Group Stage Flight Home 💩'); setShowPopup(true); }
   };
 
   const resetGame = () => {
