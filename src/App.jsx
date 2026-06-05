@@ -305,6 +305,7 @@ export default function WorldCupTacticalDraft() {
     setReRollsLeft(1);
     setLiveLog("Lineup cleared. Pull the lever to start a new campaign.");
     setSlotMachineDisplay({ flag: '🎰', name: 'START THE DRAFT' });
+    setShowPopup(false);
   };
 
   const isDraftComplete = countDrafted === SQUAD_SLOTS.length;
@@ -604,6 +605,31 @@ function PitchCard({ slot, squad, currentRoll }) {
         )}
       </div>
 
+      {showPopup && result && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onClick={() => setShowPopup(false)}>
+    <div className="relative bg-slate-900 border-2 border-yellow-400 rounded-2xl p-6 max-w-sm w-[90%] text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+      <button
+        onClick={() => setShowPopup(false)}
+        className="absolute top-3 right-3 text-slate-400 hover:text-white text-xl font-bold leading-none"
+      >
+        ✕
+      </button>
+      <img
+        src="/chingoo/calamari1.png"
+        alt="calamari1"
+        className="w-32 h-32 mx-auto rounded-full border-4 border-yellow-400 object-cover mb-4 shadow-lg"
+      />
+      <p className={`text-2xl font-black uppercase tracking-tight mb-2 ${
+        (result.includes('Champion') || result.includes('Cinderella')) ? 'text-yellow-400' :
+        result.includes('Flight') ? 'text-orange-400' : 'text-white'
+      }`}>
+        {result === 'Cinderella 🏆' ? 'Champion 🏆' : result}
+      </p>
+      <p className="text-xs text-slate-400 italic">Tap anywhere to close</p>
+    </div>
+  </div>
+)}
+      
     </div>
   );
 }
