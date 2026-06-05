@@ -616,3 +616,4 @@ function PitchCard({ slot, squad, currentRoll }) {
       </div>   
     </div>
   );
+}
