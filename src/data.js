@@ -28,7 +28,7 @@ export const PLAYERS = [
   {
     id: 'cu_1',
     name: 'Gringonator',
-    ovr: 65,
+    ovr: 10,
     pos: 'Goalkeeper',
     country: 'Chingoo United',
     traitType: 'WILDCARD',
