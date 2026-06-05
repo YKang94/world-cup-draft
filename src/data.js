@@ -44,7 +44,7 @@ export const PLAYERS = [
   {
     id: 'cu_3',
     name: 'DougDimadome322',
-    ovr: 80,
+    ovr: 85,
     pos: 'Defender',
     country: 'Chingoo United',
     traitType: 'CATALYST',
@@ -52,7 +52,7 @@ export const PLAYERS = [
   {
     id: 'cu_4',
     name: 'Boston_Ramos26',
-    ovr: 80,
+    ovr: 85,
     pos: 'Defender',
     country: 'Chingoo United',
     traitType: 'VETERAN',
@@ -60,7 +60,7 @@ export const PLAYERS = [
   {
     id: 'cu_5',
     name: 'lilYoun9',
-    ovr: 80,
+    ovr: 85,
     pos: 'Midfielder',
     country: 'Chingoo United',
     traitType: 'WILDCARD',
@@ -76,7 +76,7 @@ export const PLAYERS = [
   {
     id: 'cu_7',
     name: 'gengho',
-    ovr: 80,
+    ovr: 85,
     pos: 'Midfielder',
     country: 'Chingoo United',
     traitType: 'WONDERKID',
@@ -84,7 +84,7 @@ export const PLAYERS = [
   {
     id: 'cu_8',
     name: 'sailordooooom',
-    ovr: 80,
+    ovr: 85,
     pos: 'Forward',
     country: 'Chingoo United',
     traitType: 'WONDERKID',
@@ -92,7 +92,7 @@ export const PLAYERS = [
   {
     id: 'cu_9',
     name: 'SongEC',
-    ovr: 80,
+    ovr: 85,
     pos: 'Forward',
     country: 'Chingoo United',
     traitType: 'WILDCARD',
